@@ -1,10 +1,47 @@
-import struct
+﻿import struct
 import time
 import random
+import utils
 
 '''Battle.net protocol format strings
 	Strings formatting and documentation for battle.net packages
 '''
+
+def getHeadedMessage(ActualPackage):
+	
+	if not ActualPackage:
+		packageInfo ={	'packageHeader':None,
+						'packageTypeNumber':'0x00',
+						'packageLength':0,
+						'packedMessage':None,
+					}
+	else:
+		if len(ActualPackage) is 1:	
+			packageHeadArea = struct.unpack('!B',ActualPackage)
+			packageInfo ={	'packageHeader':hex(packageHeadArea[0]),
+							'packageTypeNumber':'0x00',
+							'packageLength':1,
+							'packedMessage':None,
+						}
+		else:
+			packageStartByte = struct.unpack('!B'+str(len(ActualPackage)-1)+'s',ActualPackage)
+			
+			if packageStartByte[0] is 1:
+				print('FIXME: starting bit in a package with payload')
+				packageHeadArea = struct.unpack('!BBBH'+str(len(ActualPackage)-5)+'s',ActualPackage)
+				packageStart, packageHeader, packageTypeNumber, packageLength, packedMessage =packageHeadArea
+			else:
+				packageHeadArea = struct.unpack('!BBH'+str(len(ActualPackage)-4)+'s',ActualPackage)
+				packageHeader, packageTypeNumber, packageLength, packedMessage =packageHeadArea
+			
+			packageInfo = {	'packageHeader':packageHeader,
+							'packageTypeNumber':hex(packageTypeNumber),
+							'packageLength':packageLength,
+							'packedMessage':packedMessage,
+							}
+	
+	return packageInfo
+	
 
 def packMessage(pck):
 	
@@ -42,6 +79,63 @@ def unpackMessage(model,actual):
 	# print('with format: ',format,end='\n')
 	return struct.unpack(format,actual)
 
+def unpackMessage_2(modelForm,packedData):
+	
+	format=''
+	names=[]
+	
+	for fmt_itm,name,validValues in modelForm:
+		format+=fmt_itm
+		names.append(name)
+	
+	# print('unpacking: ',packedData,end='\n')
+	# print('with format: ',format,end='\n')
+	# print('need (bytes): ',struct.calcsize(format),end='\n')
+	# print('have (bytes): ',len(packedData),end='\n')
+	
+	unpackedData=struct.unpack(format,packedData)
+	
+	packedItemIterator=0
+	messageInfo={}
+	
+	for fmt_itm,name,validValues in modelForm:
+		if fmt_itm[-1] != 'c':
+			messageInfo[name]=unpackedData[packedItemIterator]
+			packedItemIterator+=1
+		else:
+			sumData=''
+			for noMatter in range(int(fmt_itm[:-1])):
+				sumData+=unpackedData[packedItemIterator]
+				packedItemIterator+=1
+			messageInfo[name]=sumData
+
+	return messageInfo
+
+def packMessage_2(modelForm,unpackedData):
+	
+	format='!'
+	values=[]
+	# print('prepare for packing: ',pck,end='\n')
+	for fmt_itm,value in pck:
+		format+=fmt_itm
+		valuestr=str(value)
+		fmt_itmstr=str(fmt_itm)
+		if not valuestr.isdigit():
+			valuebts=bytearray(valuestr,'ascii')
+			value=list(valuebts)
+			values.extend(value)
+		elif not fmt_itmstr.isalpha():
+			count=int(fmt_itmstr[:-1])
+			lotofvalues=[]
+			for some in range(0,count):
+				lotofvalues.append(value)
+			values.extend(lotofvalues)
+		else:
+			values.append(value)
+	values=tuple(values)
+	# print('format',format,end='\n')
+	# print('values',values,end='\n')
+	return struct.pack(format,*values)
 
 def battle_CS_00():
 	pass
@@ -49,7 +143,37 @@ def battle_CS_00():
 def battle_CS_02():
 	pass
 
-# def 
+def battle_CS_50(packedMessage):
+	
+	# print('tamaño',len(packedMessage),sep=':',end='\n')
+	
+	pck_format=[('I','Protocol ID',[0]),
+				('4s','Platform ID',['IX86','PMAC','XMAC']),
+				('4s','Product ID',[]),
+				('I','Version Byte',[]),
+				('4s','Product language',[0]),
+				('I','Local IP',[]),	# for NAT compatibility
+				('I','Time zone bias',[0]),
+				('I','Locale ID',[]),
+				('I','Language ID',[]),
+				(str(len(packedMessage)-36)+'s','Country abreviation and Country',[]),
+				]
+	unpackedMessage=unpackMessage_2(modelForm=pck_format,packedData=packedMessage)
+	return unpackedMessage
+
+def battle_SC_50(messageData):
+	
+	pck_format=[('I','Logon Type',['0x00','0x01','0x02']),
+				('I','Server Token',[]),
+				('I','UDPValue',[]),
+				('Q','MPQ filetime',[]),
+				(str(len(packedMessage)-20)+'B','IX86ver filename',[]),
+				# ('-1s','ValueString',[]),
+				]
+	
+	return pck_format
+	
+	
 	
 def CLIENT_INIT(packet=False,pack=True):
 
@@ -771,110 +895,96 @@ def SERVER_AUTHREPLY_109(data=False,ActualPacket=False,toMakeAPackage=True):
 
 def dissectPackage(bytesPackage):
 
-	if not bytesPackage:
-		return {'packageType':'pingPackage'}
+	packageInfo=getHeadedMessage(bytesPackage)
+	if packageInfo['packageTypeNumber'] == '0x50':
+		unpackedMessage=battle_CS_50(packageInfo['packedMessage'])
+		unpackedMessage['Platform ID']=unpackedMessage['Platform ID'][::-1]
+		unpackedMessage['Product ID']=unpackedMessage['Product ID'][::-1]
+		# unpackedMessage['Local IP']=bytes(str(unpackedMessage['Local IP']),'utf-8')
+		# print('bytes:',unpackedMessage['Local IP'],'\n')
+		# unpackedMessage['Local IP']=unpackedMessage['Local IP'][::-1]
+		# print('reversed bytes:',unpackedMessage['Local IP'],'\n')
+		# unpackedMessage['Local IP']=utils.IntToDottedIP(int(unpackedMessage['Local IP']))
+		packageInfo.update(unpackedMessage)
+		return packageInfo
 	
-	if len(bytesPackage) is 1:
-		packageHeader = struct.unpack('!B',bytesPackage)
-		packageHeader = int(packageHeader[0])
-		if packageHeader is 1:
-			return {'packageType':'initPackage'}
-		else:
-			return {'packageType':'bytesPackage 1 Byte long and not an initPackage '}
-	
-	packageStartByte = struct.unpack('!B'+str(len(bytesPackage)-1)+'s',bytesPackage)
-	if packageStartByte[0] is 1:
-		print('FIXME: starting bit in a package with payload')
-		packageHeadArea = struct.unpack('!BBBB'+str(len(bytesPackage)-4)+'s',bytesPackage)
-		packageStart, packageHeader, packageType, packageLength, packagePayload =packageHeadArea
-	else:
-		packageHeadArea = struct.unpack('!BBB'+str(len(bytesPackage)-3)+'s',bytesPackage)
-		packageHeader, packageType, packageLength, packagePayload =packageHeadArea
-	
-	packageType=hex(packageType)
-	packageInfo = {	'packageHeader':packageHeader,
-					'packageType':packageType,
-					'packageLength':packageLength,
-					}
-	
-	if packageType is 0:
-		packageInfo['packageType']='CLIENT_PINGREQ'
-		messageInfo=CLIENT_PINGREQ(ActualPacket=bytesPackage,toMakeAPackage=False)
-		messageInfo.update(packageInfo)
-		return messageInfo
-	elif packageType is 2:
-		packageInfo['packageType']='CLIENT_CLOSEGAME'
-		messageInfo=CLIENT_CLOSEGAME(ActualPacket=bytesPackage,toMakeAPackage=False)
-		messageInfo.update(packageInfo)
-		return messageInfo
-	elif packageType is 37:
-		packageInfo['packageType']='CLIENT_ECHOREPLY'
-		messageInfo=CLIENT_ECHOREPLY(ActualPacket=bytesPackage,toMakeAPackage=False)
-		messageInfo.update(packageInfo)
-		return messageInfo
-	elif packageType is 38:
-		packageInfo['packageType']='CLIENT_STATSREQ'
-		messageInfo=CLIENT_STATSREQ(ActualPacket=bytesPackage,toMakeAPackage=False)
-		messageInfo.update(packageInfo)
-		return messageInfo
-	elif packageType is 41:
-		packageInfo['packageType']='CLIENT_LOGINREQ1'
-		messageInfo=CLIENT_LOGINREQ1(ActualPacket=bytesPackage,toMakeAPackage=False)
-		messageInfo.update(packageInfo)
-		return messageInfo
-	elif packageType is 45:
-		packageInfo['packageType']='CLIENT_ICONREQ'
-		messageInfo=CLIENT_ICONREQ(ActualPacket=bytesPackage,toMakeAPackage=False)
-		messageInfo.update(packageInfo)
-		return messageInfo
-	elif packageType is 49:
-		packageInfo['packageType']='CLIENT_CHANGEPASSREQ'
-		messageInfo=CLIENT_CHANGEPASSREQ(ActualPacket=bytesPackage,toMakeAPackage=False)
-		messageInfo.update(packageInfo)
-		return messageInfo
-	elif packageType is 51:
-		packageInfo['packageType']='CLIENT_FILEINFOREQ'
-		messageInfo=CLIENT_FILEINFOREQ(ActualPacket=bytesPackage,toMakeAPackage=False)
-		messageInfo.update(packageInfo)
-		return messageInfo
-	elif packageType is 61:
-		packageInfo['packageType']='CLIENT_CREATEACCTREQ2'
-		messageInfo=CLIENT_CREATEACCTREQ2(ActualPacket=bytesPackage,toMakeAPackage=False)
-		messageInfo.update(packageInfo)
-		return messageInfo
-	elif packageType is 80:
-		packageInfo['packageType']='CLIENT_COUNTRYINFO_109'
-		messageInfo=CLIENT_COUNTRYINFO_109(ActualPacket=bytesPackage,toMakeAPackage=False)
-		messageInfo.update(packageInfo)
-		return messageInfo
-	elif packageType is 81:
-		packageInfo['packageType']='CLIENT_AUTHREQ_109'
-		messageInfo=CLIENT_AUTHREQ_109(ActualPacket=bytesPackage,toMakeAPackage=False)
-		messageInfo.update(packageInfo)
-		return messageInfo
-	elif packageType is 82:
-		packageInfo['packageType']='CLIENT_CREATEACCOUNT_W3'
-		messageInfo=CLIENT_CREATEACCOUNT_W3(ActualPacket=bytesPackage,toMakeAPackage=False)
-		messageInfo.update(packageInfo)
-		return messageInfo
-	elif packageType is 83:
-		packageInfo['packageType']='CLIENT_LOGINREQ_W3'
-		messageInfo=CLIENT_LOGINREQ_W3(ActualPacket=bytesPackage,toMakeAPackage=False)
-		messageInfo.update(packageInfo)
-		return messageInfo
-	elif packageType is 90:
-		packageInfo['packageType']='CLIENT_GETPASSWORDREQ'
-		messageInfo=CLIENT_GETPASSWORDREQ(ActualPacket=bytesPackage,toMakeAPackage=False)
-		messageInfo.update(packageInfo)
-		return messageInfo
-	elif packageType is 91:
-		packageInfo['packageType']='CLIENT_CHANGEEMAILREQ'
-		messageInfo=CLIENT_CHANGEEMAILREQ(ActualPacket=bytesPackage,toMakeAPackage=False)
-		messageInfo.update(packageInfo)
-		return messageInfo
+	# if packageType is 0:
+		# packageInfo['packageType']='CLIENT_PINGREQ'
+		# messageInfo=CLIENT_PINGREQ(ActualPacket=bytesPackage,toMakeAPackage=False)
+		# messageInfo.update(packageInfo)
+		# return messageInfo
+	# elif packageType is 2:
+		# packageInfo['packageType']='CLIENT_CLOSEGAME'
+		# messageInfo=CLIENT_CLOSEGAME(ActualPacket=bytesPackage,toMakeAPackage=False)
+		# messageInfo.update(packageInfo)
+		# return messageInfo
+	# elif packageType is 37:
+		# packageInfo['packageType']='CLIENT_ECHOREPLY'
+		# messageInfo=CLIENT_ECHOREPLY(ActualPacket=bytesPackage,toMakeAPackage=False)
+		# messageInfo.update(packageInfo)
+		# return messageInfo
+	# elif packageType is 38:
+		# packageInfo['packageType']='CLIENT_STATSREQ'
+		# messageInfo=CLIENT_STATSREQ(ActualPacket=bytesPackage,toMakeAPackage=False)
+		# messageInfo.update(packageInfo)
+		# return messageInfo
+	# elif packageType is 41:
+		# packageInfo['packageType']='CLIENT_LOGINREQ1'
+		# messageInfo=CLIENT_LOGINREQ1(ActualPacket=bytesPackage,toMakeAPackage=False)
+		# messageInfo.update(packageInfo)
+		# return messageInfo
+	# elif packageType is 45:
+		# packageInfo['packageType']='CLIENT_ICONREQ'
+		# messageInfo=CLIENT_ICONREQ(ActualPacket=bytesPackage,toMakeAPackage=False)
+		# messageInfo.update(packageInfo)
+		# return messageInfo
+	# elif packageType is 49:
+		# packageInfo['packageType']='CLIENT_CHANGEPASSREQ'
+		# messageInfo=CLIENT_CHANGEPASSREQ(ActualPacket=bytesPackage,toMakeAPackage=False)
+		# messageInfo.update(packageInfo)
+		# return messageInfo
+	# elif packageType is 51:
+		# packageInfo['packageType']='CLIENT_FILEINFOREQ'
+		# messageInfo=CLIENT_FILEINFOREQ(ActualPacket=bytesPackage,toMakeAPackage=False)
+		# messageInfo.update(packageInfo)
+		# return messageInfo
+	# elif packageType is 61:
+		# packageInfo['packageType']='CLIENT_CREATEACCTREQ2'
+		# messageInfo=CLIENT_CREATEACCTREQ2(ActualPacket=bytesPackage,toMakeAPackage=False)
+		# messageInfo.update(packageInfo)
+		# return messageInfo
+	# elif packageType is 80:
+		# packageInfo['packageType']='CLIENT_COUNTRYINFO_109'
+		# messageInfo=CLIENT_COUNTRYINFO_109(ActualPacket=bytesPackage,toMakeAPackage=False)
+		# messageInfo.update(packageInfo)
+		# return messageInfo
+	# elif packageType is 81:
+		# packageInfo['packageType']='CLIENT_AUTHREQ_109'
+		# messageInfo=CLIENT_AUTHREQ_109(ActualPacket=bytesPackage,toMakeAPackage=False)
+		# messageInfo.update(packageInfo)
+		# return messageInfo
+	# elif packageType is 82:
+		# packageInfo['packageType']='CLIENT_CREATEACCOUNT_W3'
+		# messageInfo=CLIENT_CREATEACCOUNT_W3(ActualPacket=bytesPackage,toMakeAPackage=False)
+		# messageInfo.update(packageInfo)
+		# return messageInfo
+	# elif packageType is 83:
+		# packageInfo['packageType']='CLIENT_LOGINREQ_W3'
+		# messageInfo=CLIENT_LOGINREQ_W3(ActualPacket=bytesPackage,toMakeAPackage=False)
+		# messageInfo.update(packageInfo)
+		# return messageInfo
+	# elif packageType is 90:
+		# packageInfo['packageType']='CLIENT_GETPASSWORDREQ'
+		# messageInfo=CLIENT_GETPASSWORDREQ(ActualPacket=bytesPackage,toMakeAPackage=False)
+		# messageInfo.update(packageInfo)
+		# return messageInfo
+	# elif packageType is 91:
+		# packageInfo['packageType']='CLIENT_CHANGEEMAILREQ'
+		# messageInfo=CLIENT_CHANGEEMAILREQ(ActualPacket=bytesPackage,toMakeAPackage=False)
+		# messageInfo.update(packageInfo)
+		# return messageInfo
 		
 	else:
-		packageInfo['packageTypeNumber']=packageInfo['packageType']
 		packageInfo['packageType']='UNKNOWN'
 		return packageInfo
 		
