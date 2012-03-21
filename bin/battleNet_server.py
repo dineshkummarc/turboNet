@@ -304,7 +304,7 @@ def start():
 	console.pieceOfLine('configured for ')
 	console.Message(HOST,PORT,sep=':')
 	
-	# Create the server, binding to localhost on port 9999
+	# Create the server
 	server = socketserver.TCPServer((HOST, PORT), tcp)
 	
 	console.Message('waiting for clients...')
