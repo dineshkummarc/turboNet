@@ -1,0 +1,828 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+	<!-- Begin SOPA Strike -->
+	<script type="text/javascript">var a=new Date,b=a.getHours()+a.getTimezoneOffset()/60;if(18==a.getDate()&&0==a.getMonth()&&2012==a.getFullYear()&&13<=b&&24>=b)window.location="http://sopastrike.com/strike";</script>
+	<!-- End SOPA Strike -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="description" content="Battle.Net Logon Sequences, Packets, information and protocols reference site.">
+	<meta name="keywords" content="Battle.Net, Logon Sequences, Packets, information, protocols reference, programming, coding, Starcraft, Warcraft, Diablo">
+
+	<link rel="stylesheet" type="text/css" href="Product%20Keys%20and%20Hashing_archivos/default.css">	<title>BNETDocs: Redux</title>
+	<script src="Product%20Keys%20and%20Hashing_archivos/standard.js" type="text/javascript"></script>
+	<link rel="alternate" type="application/rss+xml" title="BNETDocs Redux News" href="http://www.bnetdocs.org/newsrss.php">
+<link href="data:text/css,@import%20url%28%27%20http%3A//bnetdocs.dementedminds.net/bdif/js_hide.css%20%27%29%3B" rel="stylesheet"></head>
+<!-- google_ad_section_start -->
+<!-- Battle.net StarCraft WarCraft Diablo War Counterstrike FPS Army Navy Marines Game Games RPG Vikings Blizzard Gold Leveling Mining Free Tutorials Movies Matrix 
+Computers Programming Binary Coding Hacking -->
+<!-- google_ad_section_end -->
+<body onload="doonload()">
+<div id="content" align="center">
+<div id="logo" align="left"><img src="Product%20Keys%20and%20Hashing_archivos/bnetdocslogo.png"><br>
+<br></div>
+<div id="textonlylogo" align="left"><br><h1>BNETDocs Redux</h1></div>
+<div id="frills">
+</div><table border="0" cellpadding="7" cellspacing="0" width="100%"><tbody><tr>
+<td nowrap="nowrap" valign="top" width="20%">
+	<div id="container">
+	<div id="main2">
+	<div align="left">
+	<h2>Navigation</h2>
+	<div id="divMain_Menu"><div id="author">Main Menu</div><div class="navmenu" id="bodyMain_Menu">
+		<a href="http://www.bnetdocs.org/">Main Page</a><br>
+		<a href="http://www.bnetdocs.org/?mode=all">View News History</a><br>
+		<a href="http://www.bnetdocs.org/generatedocs.php">Download BNETDocs as Text</a><br>
+		<a href="http://www.bnetdocs.org/?op=search">Search BNETDocs</a> &nbsp; <font color="red" size="1">Incomplete</font><br>
+		<a href="http://www.bnetdocs.org/forums/">Forums</a><br>
+		<a href="http://www.bnetdocs.org/?op=credits">Credits</a><br>
+		<a href="http://www.bnetdocs.org/archives/" target="_blank">BNETDocs Archives</a><br><br>
+	</div></div>
+	<div id="divConsole"><div id="author">Console</div><div class="navmenu" id="bodyConsole">
+				<div id="console">
+		<form method="post" onsubmit="return validate_form(this)" action="/?op=login"><br>
+		&nbsp;&nbsp;Username:<br>
+		&nbsp;&nbsp;<input id="inputbox" name="username" type="text"><br><br>
+		&nbsp;&nbsp;Password:<br>
+		&nbsp;&nbsp;<input id="inputbox" name="password" type="password"><br><br>
+		&nbsp;&nbsp;<input id="inputbox" name="rememberme" value="yes" type="checkbox">Remember me<br><br>
+		&nbsp;&nbsp;<input id="abutton" value="Login" type="submit"><br>
+		</form>
+		<br><center><a href="http://www.bnetdocs.org/?op=register">Register</a>&nbsp;|&nbsp;<a href="http://www.bnetdocs.org/?op=resetpw">Password Reset</a></center>
+		<br>
+		</div>
+	</div></div>
+	<div id="divDocuments"><div id="author">Documents</div><div class="navmenu" id="bodyDocuments">
+		<a href="http://www.bnetdocs.org/?op=doc&amp;did=33">Account Closure Codes</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=21">Battle.net Server List</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=32">Battle.net v2 Information</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=22">BNLS and NLS Packet Data</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=23">BNLS Checksum Algorithm</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=15">Chat Flags</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=18">Chat Statstrings</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=4">Clan Message Codes</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=28">Diablo II Game Server Accept Sequence</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=8">Diablo II Game Server Buffers and Positions</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=9">Diablo II Game Server Skill List</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=29">Diablo II Realm Server Logon Sequence</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=5">File Transfer Protocol Version 1</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=6">File Transfer Protocol Version 2</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=13">Game Statstrings</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=25">Icons.bni</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=10">Logon Sequences</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=24">NLS/SRP Protocol</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=19">Notational Convention (Sizes &amp; Types)</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=12">Platform &amp; Product IDs &amp; VerBytes</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=20">Product Keys and Hashing</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=16">Protocol Headers</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=34">Storm UDP Protocol</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=17">Telnet Protocol</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=31">Telnet's Packet Numbering System</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=11">To Do</a><br>
+<a href="http://www.bnetdocs.org/?op=doc&amp;did=27">WarCraft III Profile Requests</a><br>
+	</div></div>
+	<div id="divGenerate_Code"><div id="author" nowrap="">Generate Code: All packets</div><div class="navmenu" id="bodyGenerate_Code">
+		<a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=all&amp;lang=vb">Visual Basic 6.0</a><br>
+		<a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=all&amp;lang=cpp">C++</a><br>
+		<a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=all&amp;lang=csharp">C#.NET (C Sharp)</a><br>
+		<a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=all&amp;lang=java">Java</a><br>
+		<a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=all&amp;lang=pas">Pascal</a><br>
+		<a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=all&amp;lang=php">PHP</a><br><br>
+	</div></div>
+	<div id="divPackets"><div id="author">Packets</div><div class="navmenu" id="bodyPackets">
+		Quick Jump: [ <a href="http://www.bnetdocs.org/?op=help&amp;topic=quick%20jump">help</a> ]<br><font size="1"><br></font>
+		<form method="POST" name="quickjumpform" action="/?op=packet">
+		<input id="inputbox" name="quickjump" type="text"><input id="abutton" value="go" type="submit">
+		</form>
+		<br>
+		<div id="Battle_net_v1_Messages">
+Battle.net v1 Messages [ <a id="x11" href="#" onclick="toggle_visibility('a1'); toggle_name(this); return(false);">+</a> ]<br>
+<div class="togglable" id="a1">
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=370"><font size="1">S &gt; C [0x00] SID_NULL</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=174"><font size="1">C &gt; S [0x00] SID_NULL</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=271"><font size="1">C &gt; S [0x02] SID_STOPADV</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=100"><font size="1">S &gt; C [0x04] SID_SERVERLIST</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=344"><font size="1">S &gt; C [0x05] SID_CLIENTID</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=244"><font size="1">C &gt; S [0x05] SID_CLIENTID</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=127"><font size="1">S &gt; C [0x06] SID_STARTVERSIONING</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=372"><font size="1">C &gt; S [0x06] SID_STARTVERSIONING</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=412"><font size="1">S &gt; C [0x07] SID_REPORTVERSION</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=347"><font size="1">C &gt; S [0x07] SID_REPORTVERSION</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=148"><font size="1">S &gt; C [0x08] SID_STARTADVEX</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=291"><font size="1">C &gt; S [0x08] SID_STARTADVEX</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=266"><font size="1">S &gt; C [0x09] SID_GETADVLISTEX</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=386"><font size="1">C &gt; S [0x09] SID_GETADVLISTEX</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=186"><font size="1">S &gt; C [0x0A] SID_ENTERCHAT</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=145"><font size="1">C &gt; S [0x0A] SID_ENTERCHAT</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=363"><font size="1">S &gt; C [0x0B] SID_GETCHANNELLIST</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=374"><font size="1">C &gt; S [0x0B] SID_GETCHANNELLIST</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=227"><font size="1">C &gt; S [0x0C] SID_JOINCHANNEL</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=360"><font size="1">C &gt; S [0x0E] SID_CHATCOMMAND</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=307"><font size="1">S &gt; C [0x0F] SID_CHATEVENT</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=339"><font size="1">C &gt; S [0x10] SID_LEAVECHAT</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=287"><font size="1">C &gt; S [0x12] SID_LOCALEINFO</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=242"><font size="1">S &gt; C [0x13] SID_FLOODDETECTED</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=406"><font size="1">C &gt; S [0x14] SID_UDPPINGRESPONSE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=272"><font size="1">S &gt; C [0x15] SID_CHECKAD</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=250"><font size="1">C &gt; S [0x15] SID_CHECKAD</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=135"><font size="1">C &gt; S [0x16] SID_CLICKAD</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=473"><font size="1">S &gt; C [0x17] SID_READMEMORY</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=474"><font size="1">C &gt; S [0x17] SID_READMEMORY</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=388"><font size="1">S &gt; C [0x18] SID_REGISTRY</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=109"><font size="1">C &gt; S [0x18] SID_REGISTRY</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=346"><font size="1">S &gt; C [0x19] SID_MESSAGEBOX</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=163"><font size="1">C &gt; S [0x1A] SID_STARTADVEX2</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=202"><font size="1">C &gt; S [0x1B] SID_GAMEDATAADDRESS</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=178"><font size="1">S &gt; C [0x1C] SID_STARTADVEX3</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=265"><font size="1">C &gt; S [0x1C] SID_STARTADVEX3</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=286"><font size="1">S &gt; C [0x1D] SID_LOGONCHALLENGEEX</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=381"><font size="1">C &gt; S [0x1E] SID_CLIENTID2</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=340"><font size="1">C &gt; S [0x1F] SID_LEAVEGAME</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=475"><font size="1">S &gt; C [0x20] SID_ANNOUNCEMENT</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=143"><font size="1">C &gt; S [0x21] SID_DISPLAYAD</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=194"><font size="1">C &gt; S [0x22] SID_NOTIFYJOIN</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=476"><font size="1">S &gt; C [0x23] SID_WRITECOOKIE</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=477"><font size="1">S &gt; C [0x24] SID_READCOOKIE</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=478"><font size="1">C &gt; S [0x24] SID_READCOOKIE</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=164"><font size="1">S &gt; C [0x25] SID_PING</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=268"><font size="1">C &gt; S [0x25] SID_PING</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=112"><font size="1">S &gt; C [0x26] SID_READUSERDATA</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=358"><font size="1">C &gt; S [0x26] SID_READUSERDATA</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=122"><font size="1">C &gt; S [0x27] SID_WRITEUSERDATA</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=161"><font size="1">S &gt; C [0x28] SID_LOGONCHALLENGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=314"><font size="1">S &gt; C [0x29] SID_LOGONRESPONSE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=262"><font size="1">C &gt; S [0x29] SID_LOGONRESPONSE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=228"><font size="1">S &gt; C [0x2A] SID_CREATEACCOUNT</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=305"><font size="1">C &gt; S [0x2A] SID_CREATEACCOUNT</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=166"><font size="1">C &gt; S [0x2B] SID_SYSTEMINFO</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=187"><font size="1">C &gt; S [0x2C] SID_GAMERESULT</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=120"><font size="1">S &gt; C [0x2D] SID_GETICONDATA</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=121"><font size="1">C &gt; S [0x2D] SID_GETICONDATA</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=254"><font size="1">S &gt; C [0x2E] SID_GETLADDERDATA</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=298"><font size="1">C &gt; S [0x2E] SID_GETLADDERDATA</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=390"><font size="1">S &gt; C [0x2F] SID_FINDLADDERUSER</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=233"><font size="1">C &gt; S [0x2F] SID_FINDLADDERUSER</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=188"><font size="1">S &gt; C [0x30] SID_CDKEY</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=170"><font size="1">C &gt; S [0x30] SID_CDKEY</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=220"><font size="1">S &gt; C [0x31] SID_CHANGEPASSWORD</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=338"><font size="1">C &gt; S [0x31] SID_CHANGEPASSWORD</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=397"><font size="1">S &gt; C [0x32] SID_CHECKDATAFILE</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=341"><font size="1">C &gt; S [0x32] SID_CHECKDATAFILE</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=195"><font size="1">S &gt; C [0x33] SID_GETFILETIME</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=382"><font size="1">C &gt; S [0x33] SID_GETFILETIME</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=324"><font size="1">S &gt; C [0x34] SID_QUERYREALMS</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=334"><font size="1">C &gt; S [0x34] SID_QUERYREALMS</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=249"><font size="1">S &gt; C [0x35] SID_PROFILE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=409"><font size="1">C &gt; S [0x35] SID_PROFILE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=184"><font size="1">S &gt; C [0x36] SID_CDKEY2</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=359"><font size="1">C &gt; S [0x36] SID_CDKEY2</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=377"><font size="1">S &gt; C [0x3A] SID_LOGONRESPONSE2</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=225"><font size="1">C &gt; S [0x3A] SID_LOGONRESPONSE2</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=318"><font size="1">S &gt; C [0x3C] SID_CHECKDATAFILE2</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=280"><font size="1">C &gt; S [0x3C] SID_CHECKDATAFILE2</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=255"><font size="1">S &gt; C [0x3D] SID_CREATEACCOUNT2</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=226"><font size="1">C &gt; S [0x3D] SID_CREATEACCOUNT2</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=237"><font size="1">S &gt; C [0x3E] SID_LOGONREALMEX</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=144"><font size="1">C &gt; S [0x3E] SID_LOGONREALMEX</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=331"><font size="1">S &gt; C [0x3F] SID_STARTVERSIONING2</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=277"><font size="1">S &gt; C [0x40] SID_QUERYREALMS2</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=322"><font size="1">C &gt; S [0x40] SID_QUERYREALMS2</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=290"><font size="1">S &gt; C [0x41] SID_QUERYADURL</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=141"><font size="1">C &gt; S [0x41] SID_QUERYADURL</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=479"><font size="1">S &gt; C [0x43] SID_WARCRAFTUNKNOWN</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=292"><font size="1">S &gt; C [0x44] SID_WARCRAFTGENERAL</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=393"><font size="1">C &gt; S [0x44] SID_WARCRAFTGENERAL</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=349"><font size="1">C &gt; S [0x45] SID_NETGAMEPORT</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=101"><font size="1">S &gt; C [0x46] SID_NEWS_INFO</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=247"><font size="1">C &gt; S [0x46] SID_NEWS_INFO</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=102"><font size="1">S &gt; C [0x4A] SID_OPTIONALWORK</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=240"><font size="1">C &gt; S [0x4B] SID_EXTRAWORK</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=182"><font size="1">S &gt; C [0x4C] SID_REQUIREDWORK</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=429"><font size="1">S &gt; C [0x4E] SID_TOURNAMENT</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=146"><font size="1">S &gt; C [0x50] SID_AUTH_INFO</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=279"><font size="1">C &gt; S [0x50] SID_AUTH_INFO</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=106"><font size="1">S &gt; C [0x51] SID_AUTH_CHECK</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=408"><font size="1">C &gt; S [0x51] SID_AUTH_CHECK</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=138"><font size="1">S &gt; C [0x52] SID_AUTH_ACCOUNTCREATE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=274"><font size="1">C &gt; S [0x52] SID_AUTH_ACCOUNTCREATE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=210"><font size="1">S &gt; C [0x53] SID_AUTH_ACCOUNTLOGON</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=323"><font size="1">C &gt; S [0x53] SID_AUTH_ACCOUNTLOGON</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=330"><font size="1">S &gt; C [0x54] SID_AUTH_ACCOUNTLOGONPROOF</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=378"><font size="1">C &gt; S [0x54] SID_AUTH_ACCOUNTLOGONPROOF</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=407"><font size="1">S &gt; C [0x55] SID_AUTH_ACCOUNTCHANGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=108"><font size="1">C &gt; S [0x55] SID_AUTH_ACCOUNTCHANGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=379"><font size="1">S &gt; C [0x56] SID_AUTH_ACCOUNTCHANGEPROOF</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=270"><font size="1">C &gt; S [0x56] SID_AUTH_ACCOUNTCHANGEPROOF</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=310"><font size="1">S &gt; C [0x57] SID_AUTH_ACCOUNTUPGRADE</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=200"><font size="1">C &gt; S [0x57] SID_AUTH_ACCOUNTUPGRADE</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=219"><font size="1">S &gt; C [0x58] SID_AUTH_ACCOUNTUPGRADEPROOF</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=432"><font size="1">C &gt; S [0x58] SID_AUTH_ACCOUNTUPGRADEPROOF</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=223"><font size="1">S &gt; C [0x59] SID_SETEMAIL</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=332"><font size="1">C &gt; S [0x59] SID_SETEMAIL</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=405"><font size="1">C &gt; S [0x5A] SID_RESETPASSWORD</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=105"><font size="1">C &gt; S [0x5B] SID_CHANGEEMAIL</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=415"><font size="1">C &gt; S [0x5C] SID_SWITCHPRODUCT</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=433"><font size="1">C &gt; S [0x5D] SID_REPORTCRASH</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=420"><font size="1">S &gt; C [0x5E] SID_WARDEN</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=431"><font size="1">C &gt; S [0x5E] SID_WARDEN</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=241"><font size="1">S &gt; C [0x60] SID_GAMEPLAYERSEARCH</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=313"><font size="1">C &gt; S [0x60] SID_GAMEPLAYERSEARCH</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=153"><font size="1">S &gt; C [0x65] SID_FRIENDSLIST</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=191"><font size="1">C &gt; S [0x65] SID_FRIENDSLIST</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=384"><font size="1">S &gt; C [0x66] SID_FRIENDSUPDATE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=253"><font size="1">C &gt; S [0x66] SID_FRIENDSUPDATE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=118"><font size="1">S &gt; C [0x67] SID_FRIENDSADD</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=256"><font size="1">S &gt; C [0x68] SID_FRIENDSREMOVE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=117"><font size="1">S &gt; C [0x69] SID_FRIENDSPOSITION</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=278"><font size="1">S &gt; C [0x70] SID_CLANFINDCANDIDATES</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=151"><font size="1">C &gt; S [0x70] SID_CLANFINDCANDIDATES</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=285"><font size="1">S &gt; C [0x71] SID_CLANINVITEMULTIPLE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=259"><font size="1">C &gt; S [0x71] SID_CLANINVITEMULTIPLE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=157"><font size="1">S &gt; C [0x72] SID_CLANCREATIONINVITATION</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=319"><font size="1">C &gt; S [0x72] SID_CLANCREATIONINVITATION</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=402"><font size="1">S &gt; C [0x73] SID_CLANDISBAND</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=129"><font size="1">C &gt; S [0x73] SID_CLANDISBAND</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=301"><font size="1">S &gt; C [0x74] SID_CLANMAKECHIEFTAIN</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=257"><font size="1">C &gt; S [0x74] SID_CLANMAKECHIEFTAIN</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=149"><font size="1">S &gt; C [0x75] SID_CLANINFO</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=304"><font size="1">S &gt; C [0x76] SID_CLANQUITNOTIFY</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=211"><font size="1">S &gt; C [0x77] SID_CLANINVITATION</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=288"><font size="1">C &gt; S [0x77] SID_CLANINVITATION</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=376"><font size="1">S &gt; C [0x78] SID_CLANREMOVEMEMBER</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=139"><font size="1">C &gt; S [0x78] SID_CLANREMOVEMEMBER</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=235"><font size="1">S &gt; C [0x79] SID_CLANINVITATIONRESPONSE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=218"><font size="1">C &gt; S [0x79] SID_CLANINVITATIONRESPONSE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=248"><font size="1">S &gt; C [0x7A] SID_CLANRANKCHANGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=193"><font size="1">C &gt; S [0x7A] SID_CLANRANKCHANGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=167"><font size="1">C &gt; S [0x7B] SID_CLANSETMOTD</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=321"><font size="1">S &gt; C [0x7C] SID_CLANMOTD</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=398"><font size="1">C &gt; S [0x7C] SID_CLANMOTD</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=216"><font size="1">S &gt; C [0x7D] SID_CLANMEMBERLIST</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=289"><font size="1">C &gt; S [0x7D] SID_CLANMEMBERLIST</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=297"><font size="1">S &gt; C [0x7E] SID_CLANMEMBERREMOVED</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=116"><font size="1">S &gt; C [0x7F] SID_CLANMEMBERSTATUSCHANGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=392"><font size="1">S &gt; C [0x81] SID_CLANMEMBERRANKCHANGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=158"><font size="1">S &gt; C [0x82] SID_CLANMEMBERINFORMATION</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=160"><font size="1">C &gt; S [0x82] SID_CLANMEMBERINFORMATION</font></a><br>
+
+<br>
+<font id="viewcode">View Code: [&nbsp; <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=1&amp;lang=pas">PAS</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=1&amp;lang=cpp">CPP</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=1&amp;lang=vb">VB</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=1&amp;lang=php">PHP</a> &nbsp;]</font><br>
+</div><br>
+</div>
+<div id="Battle_net_v2_Messages">
+Battle.net v2 Messages [ <a id="x21" href="#" onclick="toggle_visibility('a2'); toggle_name(this); return(false);">+</a> ]<br>
+<div class="togglable" id="a2">
+
+<br>
+<font id="viewcode">View Code: [&nbsp; <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=9&amp;lang=pas">PAS</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=9&amp;lang=cpp">CPP</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=9&amp;lang=vb">VB</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=9&amp;lang=php">PHP</a> &nbsp;]</font><br>
+</div><br>
+</div>
+<div id="BNLS_Messages">
+BNLS Messages [ <a id="x31" href="#" onclick="toggle_visibility('a3'); toggle_name(this); return(false);">+</a> ]<br>
+<div class="togglable" id="a3">
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=356"><font size="1">C &gt; S [0x00] BNLS_NULL</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=123"><font size="1">S &gt; C [0x01] BNLS_CDKEY</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=179"><font size="1">C &gt; S [0x01] BNLS_CDKEY</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=329"><font size="1">S &gt; C [0x02] BNLS_LOGONCHALLENGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=306"><font size="1">C &gt; S [0x02] BNLS_LOGONCHALLENGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=350"><font size="1">S &gt; C [0x03] BNLS_LOGONPROOF</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=152"><font size="1">C &gt; S [0x03] BNLS_LOGONPROOF</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=183"><font size="1">S &gt; C [0x04] BNLS_CREATEACCOUNT</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=214"><font size="1">C &gt; S [0x04] BNLS_CREATEACCOUNT</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=115"><font size="1">S &gt; C [0x05] BNLS_CHANGECHALLENGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=132"><font size="1">C &gt; S [0x05] BNLS_CHANGECHALLENGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=203"><font size="1">S &gt; C [0x06] BNLS_CHANGEPROOF</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=326"><font size="1">C &gt; S [0x06] BNLS_CHANGEPROOF</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=348"><font size="1">S &gt; C [0x07] BNLS_UPGRADECHALLENGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=395"><font size="1">C &gt; S [0x07] BNLS_UPGRADECHALLENGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=201"><font size="1">S &gt; C [0x08] BNLS_UPGRADEPROOF</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=205"><font size="1">C &gt; S [0x08] BNLS_UPGRADEPROOF</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=213"><font size="1">S &gt; C [0x09] BNLS_VERSIONCHECK</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=361"><font size="1">C &gt; S [0x09] BNLS_VERSIONCHECK</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=104"><font size="1">S &gt; C [0x0A] BNLS_CONFIRMLOGON</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=113"><font size="1">C &gt; S [0x0A] BNLS_CONFIRMLOGON</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=383"><font size="1">S &gt; C [0x0B] BNLS_HASHDATA</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=293"><font size="1">C &gt; S [0x0B] BNLS_HASHDATA</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=362"><font size="1">S &gt; C [0x0C] BNLS_CDKEY_EX</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=343"><font size="1">C &gt; S [0x0C] BNLS_CDKEY_EX</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=208"><font size="1">S &gt; C [0x0D] BNLS_CHOOSENLSREVISION</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=283"><font size="1">C &gt; S [0x0D] BNLS_CHOOSENLSREVISION</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=396"><font size="1">S &gt; C [0x0E] BNLS_AUTHORIZE</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=413"><font size="1">C &gt; S [0x0E] BNLS_AUTHORIZE</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=196"><font size="1">S &gt; C [0x0F] BNLS_AUTHORIZEPROOF</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=185"><font size="1">C &gt; S [0x0F] BNLS_AUTHORIZEPROOF</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=134"><font size="1">S &gt; C [0x10] BNLS_REQUESTVERSIONBYTE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=181"><font size="1">C &gt; S [0x10] BNLS_REQUESTVERSIONBYTE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=238"><font size="1">S &gt; C [0x11] BNLS_VERIFYSERVER</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=251"><font size="1">C &gt; S [0x11] BNLS_VERIFYSERVER</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=355"><font size="1">S &gt; C [0x12] BNLS_RESERVESERVERSLOTS</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=239"><font size="1">C &gt; S [0x12] BNLS_RESERVESERVERSLOTS</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=404"><font size="1">S &gt; C [0x13] BNLS_SERVERLOGONCHALLENGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=315"><font size="1">C &gt; S [0x13] BNLS_SERVERLOGONCHALLENGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=176"><font size="1">S &gt; C [0x14] BNLS_SERVERLOGONPROOF</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=252"><font size="1">C &gt; S [0x14] BNLS_SERVERLOGONPROOF</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=368"><font size="1">S &gt; C [0x18] BNLS_VERSIONCHECKEX</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=155"><font size="1">C &gt; S [0x18] BNLS_VERSIONCHECKEX</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=125"><font size="1">S &gt; C [0x1A] BNLS_VERSIONCHECKEX2</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=260"><font size="1">C &gt; S [0x1A] BNLS_VERSIONCHECKEX2</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=472"><font size="1">S &gt; C [0x7D] BNLS_WARDEN</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=471"><font size="1">C &gt; S [0x7D] BNLS_WARDEN</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=470"><font size="1">S &gt; C [0xFF] BNLS_IPBAN</font></a><br>
+
+<br>
+<font id="viewcode">View Code: [&nbsp; <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=7&amp;lang=pas">PAS</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=7&amp;lang=cpp">CPP</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=7&amp;lang=vb">VB</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=7&amp;lang=php">PHP</a> &nbsp;]</font><br>
+</div><br>
+</div>
+<div id="Realm_Messages">
+Realm Messages [ <a id="x41" href="#" onclick="toggle_visibility('a4'); toggle_name(this); return(false);">+</a> ]<br>
+<div class="togglable" id="a4">
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=375"><font size="1">S &gt; C [0x01] MCP_STARTUP</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=320"><font size="1">C &gt; S [0x01] MCP_STARTUP</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=246"><font size="1">S &gt; C [0x02] MCP_CHARCREATE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=130"><font size="1">C &gt; S [0x02] MCP_CHARCREATE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=351"><font size="1">S &gt; C [0x03] MCP_CREATEGAME</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=177"><font size="1">C &gt; S [0x03] MCP_CREATEGAME</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=107"><font size="1">S &gt; C [0x04] MCP_JOINGAME</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=224"><font size="1">C &gt; S [0x04] MCP_JOINGAME</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=367"><font size="1">S &gt; C [0x05] MCP_GAMELIST</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=295"><font size="1">C &gt; S [0x05] MCP_GAMELIST</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=162"><font size="1">S &gt; C [0x06] MCP_GAMEINFO</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=175"><font size="1">C &gt; S [0x06] MCP_GAMEINFO</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=337"><font size="1">S &gt; C [0x07] MCP_CHARLOGON</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=154"><font size="1">C &gt; S [0x07] MCP_CHARLOGON</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=411"><font size="1">S &gt; C [0x0A] MCP_CHARDELETE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=333"><font size="1">C &gt; S [0x0A] MCP_CHARDELETE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=354"><font size="1">S &gt; C [0x11] MCP_REQUESTLADDERDATA</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=99"><font size="1">C &gt; S [0x11] MCP_REQUESTLADDERDATA</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=325"><font size="1">S &gt; C [0x12] MCP_MOTD</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=172"><font size="1">C &gt; S [0x12] MCP_MOTD</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=316"><font size="1">C &gt; S [0x13] MCP_CANCELGAMECREATE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=308"><font size="1">S &gt; C [0x14] MCP_CREATEQUEUE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=481"><font size="1">C &gt; S [0x16] MCP_CHARRANK</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=236"><font size="1">S &gt; C [0x17] MCP_CHARLIST</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=119"><font size="1">C &gt; S [0x17] MCP_CHARLIST</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=342"><font size="1">S &gt; C [0x18] MCP_CHARUPGRADE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=103"><font size="1">C &gt; S [0x18] MCP_CHARUPGRADE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=189"><font size="1">S &gt; C [0x19] MCP_CHARLIST2</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=261"><font size="1">C &gt; S [0x19] MCP_CHARLIST2</font></a><br>
+
+<br>
+<font id="viewcode">View Code: [&nbsp; <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=3&amp;lang=pas">PAS</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=3&amp;lang=cpp">CPP</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=3&amp;lang=vb">VB</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=3&amp;lang=php">PHP</a> &nbsp;]</font><br>
+</div><br>
+</div>
+<div id="D2GS_Messages">
+D2GS Messages [ <a id="x51" href="#" onclick="toggle_visibility('a5'); toggle_name(this); return(false);">+</a> ]<br>
+<div class="togglable" id="a5">
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=128"><font size="1">C &gt; S [0x01] D2GS_WALKTOLOCATION</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=365"><font size="1">C &gt; S [0x02] D2GS_WALKTOENTITY</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=232"><font size="1">C &gt; S [0x03] D2GS_RUNTOLOCATION</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=399"><font size="1">C &gt; S [0x04] D2GS_RUNTOENTITY</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=380"><font size="1">C &gt; S [0x05] D2GS_LEFTSKILLONLOCATION</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=192"><font size="1">C &gt; S [0x06] D2GS_LEFTSKILLONENTITY</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=423"><font size="1">C &gt; S [0x07] D2GS_LEFTSKILLONENTITYEX</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=296"><font size="1">C &gt; S [0x08] D2GS_LEFTSKILLONLOCATIONEX</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=156"><font size="1">C &gt; S [0x09] D2GS_LEFTSKILLONENTITYEX2</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=424"><font size="1">C &gt; S [0x0A] D2GS_LEFTSKILLONENTITYEX3</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=282"><font size="1">C &gt; S [0x0C] D2GS_RIGHTSKILLONLOCATION</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=190"><font size="1">C &gt; S [0x0D] D2GS_RIGHTSKILLONENTITY</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=426"><font size="1">C &gt; S [0x0E] D2GS_RIGHTSKILLONENTITYEX</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=111"><font size="1">C &gt; S [0x0F] D2GS_RIGHTSKILLONLOCATIONEX</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=150"><font size="1">C &gt; S [0x10] D2GS_RIGHTSKILLONENTITYEX2</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=425"><font size="1">C &gt; S [0x11] D2GS_RIGHTSKILLONENTITYEX3</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=327"><font size="1">C &gt; S [0x13] D2GS_INTERACTWITHENTITY</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=303"><font size="1">C &gt; S [0x14] D2GS_OVERHEADMESSAGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=414"><font size="1">C &gt; S [0x15] D2GS_CHATMESSAGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=136"><font size="1">C &gt; S [0x16] D2GS_PICKUPITEM</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=275"><font size="1">C &gt; S [0x17] D2GS_DROPITEM</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=353"><font size="1">C &gt; S [0x18] D2GS_ITEMTOBUFFER</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=159"><font size="1">C &gt; S [0x19] D2GS_PICKUPBUFFERITEM</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=317"><font size="1">C &gt; S [0x1A] D2GS_ITEMTOBODY</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=258"><font size="1">C &gt; S [0x1B] D2GS_SWAP2HANDEDITEM</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=428"><font size="1">C &gt; S [0x1C] D2GS_PICKUPBODYITEM</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=126"><font size="1">C &gt; S [0x1D] D2GS_SWITCHBODYITEM</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=133"><font size="1">C &gt; S [0x1F] D2GS_SWITCHINVENTORYITEM</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=336"><font size="1">C &gt; S [0x20] D2GS_USEITEM</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=364"><font size="1">C &gt; S [0x21] D2GS_STACKITEM</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=391"><font size="1">C &gt; S [0x22] D2GS_REMOVESTACKITEM</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=284"><font size="1">C &gt; S [0x23] D2GS_ITEMTOBELT</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=276"><font size="1">C &gt; S [0x24] D2GS_REMOVEBELTITEM</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=114"><font size="1">C &gt; S [0x25] D2GS_SWITCHBELTITEM</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=389"><font size="1">C &gt; S [0x26] D2GS_USEBELTITEM</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=345"><font size="1">C &gt; S [0x28] D2GS_INSERTSOCKETITEM</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=169"><font size="1">C &gt; S [0x29] D2GS_SCROLLTOTOME</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=410"><font size="1">C &gt; S [0x2A] D2GS_ITEMTOCUBE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=267"><font size="1">C &gt; S [0x2D] D2GS_UNSELECTOBJ</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=206"><font size="1">C &gt; S [0x2F] D2GS_NPCINIT</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=168"><font size="1">C &gt; S [0x30] D2GS_NPCCANCEL</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=215"><font size="1">C &gt; S [0x32] D2GS_NPCBUY</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=373"><font size="1">C &gt; S [0x33] D2GS_NPCSELL</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=394"><font size="1">C &gt; S [0x38] D2GS_NPCTRADE</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=212"><font size="1">C &gt; S [0x3F] D2GS_CHARACTERPHRASE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=281"><font size="1">C &gt; S [0x49] D2GS_WAYPOINT</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=98"><font size="1">C &gt; S [0x4F] D2GS_TRADE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=137"><font size="1">C &gt; S [0x50] D2GS_DROPGOLD</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=173"><font size="1">C &gt; S [0x5E] D2GS_PARTY</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=371"><font size="1">C &gt; S [0x61] D2GS_POTIONTOMERCENARY</font></a><font class="raw">RAW</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=131"><font size="1">C &gt; S [0x68] D2GS_GAMELOGON</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=300"><font size="1">C &gt; S [0x6A] D2GS_ENTERGAMEENVIRONMENT</font></a><font class="raw">RAW</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=352"><font size="1">C &gt; S [0x6D] D2GS_PING</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=230"><font size="1">S &gt; C [0x10] D2GS_CHARTOOBJ</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=269"><font size="1">S &gt; C [0x19] D2GS_SMALLGOLDPICKUP</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=221"><font size="1">S &gt; C [0x1D] D2GS_SETBYTEATTR</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=222"><font size="1">S &gt; C [0x1E] D2GS_SETWORDATTR</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=299"><font size="1">S &gt; C [0x1F] D2GS_SETDWORDATTR</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=147"><font size="1">S &gt; C [0x51] D2GS_WORLDOBJECT</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=273"><font size="1">S &gt; C [0x5C] D2GS_(COMP)STARTGAME</font></a><font class="raw">RAW</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=142"><font size="1">S &gt; C [0x77] D2GS_TRADEACTION</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=264"><font size="1">S &gt; C [0x7A] D2GS_LOGONRESPONSE</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=430"><font size="1">S &gt; C [0x89] D2GS_UNIQUEEVENTS</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=245"><font size="1">S &gt; C [0xAF] D2GS_STARTLOGON</font></a><br>
+
+<br>
+<font id="viewcode">View Code: [&nbsp; <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=4&amp;lang=pas">PAS</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=4&amp;lang=cpp">CPP</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=4&amp;lang=vb">VB</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=4&amp;lang=php">PHP</a> &nbsp;]</font><br>
+</div><br>
+</div>
+<div id="Battle_net_UDP_Messages">
+Battle.net UDP Messages [ <a id="x61" href="#" onclick="toggle_visibility('a6'); toggle_name(this); return(false);">+</a> ]<br>
+<div class="togglable" id="a6">
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=482"><font size="1">C &gt; C [0x00] PKT_STORM</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=328"><font size="1">C &gt; C [0x03] PKT_CLIENTREQ</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=165"><font size="1">S &gt; C [0x05] PKT_SERVERPING</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=387"><font size="1">C &gt; S [0x07] PKT_KEEPALIVE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=234"><font size="1">C &gt; S [0x08] PKT_CONNTEST</font></a><font class="defunct">DEFUNCT</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=199"><font size="1">C &gt; S [0x09] PKT_CONNTEST2</font></a><br>
+
+<br>
+<font id="viewcode">View Code: [&nbsp; <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=2&amp;lang=pas">PAS</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=2&amp;lang=cpp">CPP</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=2&amp;lang=vb">VB</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=2&amp;lang=php">PHP</a> &nbsp;]</font><br>
+</div><br>
+</div>
+<div id="BotNet_Messages">
+BotNet Messages [ <a id="x71" href="#" onclick="toggle_visibility('a7'); toggle_name(this); return(false);">+</a> ]<br>
+<div class="togglable" id="a7">
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=311"><font size="1">S &gt; C [0x00] PACKET_IDLE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=294"><font size="1">C &gt; S [0x00] PACKET_IDLE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=204"><font size="1">S &gt; C [0x01] PACKET_LOGON</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=231"><font size="1">C &gt; S [0x01] PACKET_LOGON</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=309"><font size="1">S &gt; C [0x02] PACKET_STATSUPDATE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=171"><font size="1">C &gt; S [0x02] PACKET_STATSUPDATE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=243"><font size="1">S &gt; C [0x03] PACKET_DATABASE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=400"><font size="1">C &gt; S [0x03] PACKET_DATABASE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=140"><font size="1">S &gt; C [0x04] PACKET_MESSAGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=263"><font size="1">C &gt; S [0x04] PACKET_MESSAGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=124"><font size="1">S &gt; C [0x05] PACKET_CYCLE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=401"><font size="1">C &gt; S [0x05] PACKET_CYCLE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=198"><font size="1">S &gt; C [0x06] PACKET_USERINFO</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=369"><font size="1">C &gt; S [0x06] PACKET_USERINFO</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=229"><font size="1">S &gt; C [0x07] PACKET_USERLOGGINGOFF</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=110"><font size="1">C &gt; S [0x07] PACKET_BROADCASTMESSAGE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=357"><font size="1">C &gt; S [0x08] PACKET_COMMAND</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=403"><font size="1">C &gt; S [0x09] PACKET_CHANGEDBPASSWORD</font></a><font class="raw">RAW</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=385"><font size="1">S &gt; C [0x0A] PACKET_BOTNETVERSION</font></a><font class="raw">RAW</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=207"><font size="1">S &gt; C [0x0B] PACKET_BOTNETCHAT</font></a><font class="raw">RAW</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=312"><font size="1">C &gt; S [0x0B] PACKET_BOTNETCHAT</font></a><font class="raw">RAW</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=366"><font size="1">S &gt; C [0x0D] PACKET_ACCOUNT</font></a><font class="raw">RAW</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=209"><font size="1">C &gt; S [0x0D] PACKET_ACCOUNT</font></a><font class="raw">RAW</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=197"><font size="1">S &gt; C [0x10] PACKET_CHATDROPOPTIONS</font></a><font class="raw">RAW</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=335"><font size="1">C &gt; S [0x10] PACKET_CHATDROPOPTIONS</font></a><font class="raw">RAW</font>
+<br>
+
+<br>
+<font id="viewcode">View Code: [&nbsp; <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=6&amp;lang=pas">PAS</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=6&amp;lang=cpp">CPP</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=6&amp;lang=vb">VB</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=6&amp;lang=php">PHP</a> &nbsp;]</font><br>
+</div><br>
+</div>
+<div id="W3GS_Messages">
+W3GS Messages [ <a id="x81" href="#" onclick="toggle_visibility('a8'); toggle_name(this); return(false);">+</a> ]<br>
+<div class="togglable" id="a8">
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=446"><font size="1">C &gt; S [0x1E] W3GS_REQJOIN</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=453"><font size="1">C &gt; S [0x21] W3GS_LEAVEREQ</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=463"><font size="1">C &gt; S [0x23] W3GS_GAMELOADED_SELF</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=439"><font size="1">C &gt; S [0x26] W3GS_OUTGOING_ACTION</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=464"><font size="1">C &gt; S [0x27] W3GS_OUTGOING_KEEPALIVE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=465"><font size="1">C &gt; S [0x28] W3GS_CHAT_TO_HOST</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=434"><font size="1">C &gt; S [0x2F] W3GS_SEARCHGAME</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=452"><font size="1">C &gt; S [0x37] W3GS_CLIENTINFO</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=443"><font size="1">C &gt; S [0x3F] W3GS_STARTDOWNLOAD</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=467"><font size="1">C &gt; S [0x42] W3GS_MAPSIZE</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=445"><font size="1">C &gt; S [0x44] W3GS_MAPPARTOK</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=469"><font size="1">C &gt; S [0x45] W3GS_MAPPARTNOTOK</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=448"><font size="1">C &gt; S [0x46] W3GS_PONG_TO_HOST</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=447"><font size="1">S &gt; C [0x01] W3GS_PING_FROM_HOST</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=460"><font size="1">S &gt; C [0x04] W3GS_SLOTINFOJOIN</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=456"><font size="1">S &gt; C [0x05] W3GS_REJECTJOIN</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=451"><font size="1">S &gt; C [0x06] W3GS_PLAYERINFO</font></a><font class="research">RESEARCH</font>
+<br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=455"><font size="1">S &gt; C [0x07] W3GS_PLAYERLEFT</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=457"><font size="1">S &gt; C [0x08] W3GS_PLAYERLOADED</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=461"><font size="1">S &gt; C [0x09] W3GS_SLOTINFO</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=458"><font size="1">S &gt; C [0x0A] W3GS_COUNTDOWN_START</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=459"><font size="1">S &gt; C [0x0B] W3GS_COUNTDOWN_END</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=440"><font size="1">S &gt; C [0x0C] W3GS_INCOMING_ACTION</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=462"><font size="1">S &gt; C [0x0F] W3GS_CHAT_FROM_HOST</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=454"><font size="1">S &gt; C [0x1B] W3GS_LEAVERS</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=466"><font size="1">S &gt; C [0x2F] W3GS_SEARCHGAME</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=435"><font size="1">S &gt; C [0x30] W3GS_GAMEINFO</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=436"><font size="1">S &gt; C [0x31] W3GS_CREATEGAME</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=437"><font size="1">S &gt; C [0x32] W3GS_REFRESHGAME</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=438"><font size="1">S &gt; C [0x33] W3GS_DECREATEGAME</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=441"><font size="1">S &gt; C [0x3D] W3GS_MAPCHECK</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=442"><font size="1">S &gt; C [0x3F] W3GS_STARTDOWNLOAD</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=444"><font size="1">S &gt; C [0x43] W3GS_MAPPART</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=468"><font size="1">S &gt; C [0x48] W3GS_INCOMING_ACTION2</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=449"><font size="1">C &gt; C [0x35] W3GS_PING_FROM_OTHERS</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=450"><font size="1">C &gt; C [0x36] W3GS_PONG_TO_OTHERS</font></a><br>
+
+<br>
+<font id="viewcode">View Code: [&nbsp; <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=5&amp;lang=pas">PAS</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=5&amp;lang=cpp">CPP</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=5&amp;lang=vb">VB</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=5&amp;lang=php">PHP</a> &nbsp;]</font><br>
+</div><br>
+</div>
+<div id="SCGP_Messages">
+SCGP Messages [ <a id="x91" href="#" onclick="toggle_visibility('a9'); toggle_name(this); return(false);">+</a> ]<br>
+<div class="togglable" id="a9">
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=484"><font size="1">C &gt; C [CLS 1 0x00] SCGP_GAMECHAT</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=486"><font size="1">C &gt; C [CLS 1 0x49] SCGP_PLAYERJOIN</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=485"><font size="1">C &gt; C [CLS 1 0x4C] SCGP_LOBBYCHAT</font></a><br>
+<a href="http://www.bnetdocs.org/?op=packet&amp;pid=483"><font size="1">C &gt; C [CLS 2 0x05] SCGP_KEEPALIVE</font></a><br>
+
+<br>
+<font id="viewcode">View Code: [&nbsp; <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=8&amp;lang=pas">PAS</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=8&amp;lang=cpp">CPP</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=8&amp;lang=vb">VB</a> <a href="http://www.bnetdocs.org/?op=generatecode&amp;gid=8&amp;lang=php">PHP</a> &nbsp;]</font><br>
+</div><br>
+</div>
+		</div></div>
+	<div id="divOther_Resources"><div id="author">Other Resources</div><div class="navmenu" id="bodyOther_Resouces">
+		<a href="http://www.bnetdocs.org/archives/bnlsprotocolspec.txt" target="_blank">BNLS Protocol Specs</a><br>
+		<a href="http://www.bnetdocs.org/archives/bnsp-latest.txt" target="_blank">BotNet Protocol Specs</a><br>
+		<a href="http://forum.valhallalegends.com/index.php?board=17.0" target="_blank">BNET Bot Development Forums</a><br><br>
+	</div></div></div></div></div>
+</td>
+<td valign="top" width="60%">
+				<div id="container">
+				<div id="main2">
+				<h2>Product Keys and Hashing</h2>
+				<br>
+								<div align="center"><div style="width: 97%;" align="left">
+				There are three types of CD-Keys, which are used by Battle.net to 
+uniquely identify a game owner as a legitimate client. There are 
+thirteen (13) digit keys, containing only numbers, of which the 
+thirteenth is a checksum to validate the other twelve, used by the 
+original Starcraft product releases. More common are the sixteen (16) 
+digit keys, used by Diablo II, Lord of Destruction, and Warcraft II, 
+consisting of the alphanumeric characters 2, 4 , 6, 7, 8 ,9, B, C, D, E,
+ F, G, H, J, K, M, N, P, R, T, V, W, X, and Z. Finally, there are the 
+twenty-six (26) digit keys currently used by newer releases of 
+Starcraft, Diablo II, and Lord of Destruction, as well as Warcraft III, 
+The Frozen Throne, and Starcraft II. These keys use all the same 
+characters as the sixteen digit ones, with the inclusion of the letter 
+Y.<br>
+<br>
+Each product key is actually the result of an algorithm to encode three 
+values, commonly referred to as the Product, Public, and Private key 
+values. The first two of these values are sent raw to the server as part
+ of the connection, as well as a hash of all three, allowing the server 
+to verify the key as a legitimate match without the opportunity of 
+theft, as is possible in the SID_CDKEY packet where the key is passed as
+ typed.<br>
+<br>
+The Product value is used to identify the key's client, and relate as follows:<br>
+<ul>
+ <li>0x01: 13-digit Starcraft Key</li>
+ <li>0x02: 13-digit Starcraft Key (opened later due to the success and continuing sales of Starcraft)</li>
+ <li>0x04: 16-digit Warcraft II Key</li>
+ <li>0x05: 16-digit Diablo II: Beta Key (defunct)</li>
+ <li>0x05: 26-digit Starcraft II Beta Key (defunct)</li>
+ <li>0x06: 16-digit Diablo II Key</li>
+ <li>0x07: 16-digit Diablo II Key</li>
+ <li>0x09: 16-digit Diablo II: Stress Test Key (defunct)</li>
+ <li>0x0A: 16-digit Diablo II: Lord of Destruction Key</li>
+ <li>0x0C: 16-digit Diablo II: Lord of Destruction Key</li>
+ <li>0x0D: 26-digit Warcraft III: Reign Of Chaos Beta Key (defunct)</li>
+ <li>0x0E: 26-digit Warcraft III: Reign Of Chaos Key</li>
+ <li>0x0F: 26-digit Warcraft III: Reign Of Chaos Key</li>
+ <li>0x11: 26-digit Warcraft III: The Frozen Throne Beta Key (defunct)</li>
+ <li>0x12: 26-digit Warcraft III: The Frozen Throne Key</li>
+ <li>0x13: 26-digit Warcraft III: The Frozen Throne Retail key (NOTE: 
+This product seems disabled? Has something to do with Chinese region)</li>
+ <li>0x15: 26-digit World of Warcraft: The Burning Crusade</li>
+ <li>0x16: 26-digit World of Warcraft: 14-day Trial</li>
+ <li>0x17: 26-digit Starcraft Key (upgrade when Starcraft was released 
+as an online-download and the game CD was removed from requirements to 
+run the application)</li>
+ <li>0x18: 26-digit Diablo II Key (released at the same time as the 26-digit keys for the same reasons)</li>
+ <li>0x19: 26-digit Diablo II: Lord of Destruction Key (see 0x17 and 0x18)</li>
+ <li>0x1A: 26-digit World of Warcraft: Wrath of the Lich King</li>
+ <li>0x1C: 26-digit Starcraft II: Wings of Liberty Key (only one key 
+examined by this author, others may be in existence, and likely to 
+change for the next two releases)</li>
+</ul>
+<br>
+For each key type, the public and private value lengths differ, with the
+ lengths usually being one DWORD, but with a 10-byte private value for 
+26-digit keys. Example code for encoding and decoding these keys is 
+around, and the author of this document would like to thank Yegg for his
+ work in creating more efficient Key coding in the linked examples: <a href="http://pastebin.com/iUmw6Dc8">VB.NET|Battle.net CD-Key Encoding/Decoding</a>.<br>
+<br>
+Jailout2000 has also provided an example to REALbasic programmers for encoding and decoding 13-digit keys: <a href="http://pastebin.com/YcvTfbrJ">REALbasic 13-digit Key Encoder/Decoder</a>.				<br><br>
+				<div align="center">
+									<div id="code">Related: <a href="http://www.bnetdocs.org/?op=packet&amp;pid=170">[0x30]&nbsp;SID_CDKEY&nbsp;(C-&gt;S)</a>, <a href="http://www.bnetdocs.org/?op=packet&amp;pid=359">[0x36]&nbsp;SID_CDKEY2&nbsp;(C-&gt;S)</a>, <a href="http://www.bnetdocs.org/?op=packet&amp;pid=408">[0x51]&nbsp;SID_AUTH_CHECK&nbsp;(C-&gt;S)</a></div></div>
+					</div></div></div></div>
+				
+				<div id="comments">
+				<div id="container">
+				<div id="main2">
+				<h2>User Comments</h2>
+				<center><br>For detailed questions and discussion, visit the <a href="http://forum.valhallalegends.com/index.php/board,17.0.html" target="_blank">Battle.net Research Forum</a><br><br></center>
+				<div id="author" nowrap=""> </div><table border="0" cellpadding="1" cellspacing="0" width="100%"><tbody><tr><td height="100%" width="20%" align="center"><table class="commentsidebar" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%"><tbody><tr><td height="100%" valign="center" width="100%" align="center">Jailout2000<br>Aug 17, 2010<br>02:48 AM</td></tr></tbody></table></td><td><div style="border: 1px #555 solid; padding: 2px; padding-left: 5px;"><br>Nice
+ reference. I give props to the VB.NET examples. Although I must add, 
+where is the StarCraft II Wings of Liberty Demo Product Key? I only see 
+the Beta and what looks like Retail versions.<br><br></div></td></tr></tbody></table><div id="author" nowrap=""> </div><table border="0" cellpadding="1" cellspacing="0" width="100%"><tbody><tr><td height="100%" width="20%" align="center"><table class="commentsidebar" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%"><tbody><tr><td height="100%" valign="center" width="100%" align="center">RealityRipple<br>Aug 30, 2010<br>08:22 PM</td></tr></tbody></table></td><td><div style="border: 1px #555 solid; padding: 2px; padding-left: 5px;"><br>I
+ don't have a copy of the game, but so far as I know, the SC2 guest pass
+ keys use the same product value as the actual game, using the Public 
+value to identify it as a guest pass (the two I examined started with 
+0x1EBA--).<br><br></div></td></tr></tbody></table><div id="author" nowrap=""> </div><table border="0" cellpadding="1" cellspacing="0" width="100%"><tbody><tr><td height="100%" width="20%" align="center"><table class="commentsidebar" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%"><tbody><tr><td height="100%" valign="center" width="100%" align="center">Kyro<br>Aug 30, 2010<br>11:07 PM</td></tr></tbody></table></td><td><div style="border: 1px #555 solid; padding: 2px; padding-left: 5px;"><br>I'm surprised you don't have SC2, Andy. I have it, and so far, I'm definitely not disappointed. :)<br><br></div></td></tr></tbody></table><div id="author" nowrap=""> </div><table border="0" cellpadding="1" cellspacing="0" width="100%"><tbody><tr><td height="100%" width="20%" align="center"><table class="commentsidebar" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%"><tbody><tr><td height="100%" valign="center" width="100%" align="center">Heinermann<br>Sep 04, 2010<br>05:46 PM</td></tr></tbody></table></td><td><div style="border: 1px #555 solid; padding: 2px; padding-left: 5px;"><br>Retrieved the following from the game installers:<br>
+<br>
+0x05: 16-digit Diablo II Beta Key<br>
+0x06: 16-digit Diablo II Retail Key<br>
+0x07: 16-digit Diablo II Retail Key<br>
+0x09: 16-digit Diablo II Stress Test Key<br>
+0x0A: 16-digit Diablo II: Lord of Destruction Retail Key<br>
+0x0C: 16-digit Diablo II: Lord of Destruction Retail Key<br>
+0x0D: 26-digit Warcraft III: Reign Of Chaos Beta key<br>
+0x0E: 26-digit Warcraft III: Reign Of Chaos Retail Key<br>
+0x0F: 26-digit Warcraft III: Reign Of Chaos Retail Key<br>
+0x11: 26-digit Warcraft III: The Frozen Throne Beta key<br>
+0x12: 26-digit Warcraft III: The Frozen Throne Retail key<br>
+0x13: 26-digit Warcraft III: The Frozen Throne Retail key (NOTE: This 
+product seems disabled? Has something to do with Chinese region)<br>
+<br>
+Any conflicts are intentional. Product IDs that havn't been seen before are reserved by the appropriate installer.<br>
+Starcraft II and the other digital keys might also have reservations, 
+but I havn't been able to really grab it from the installer.<br><br></div></td></tr></tbody></table><div id="author" nowrap=""> </div><table border="0" cellpadding="1" cellspacing="0" width="100%"><tbody><tr><td height="100%" width="20%" align="center"><table class="commentsidebar" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%"><tbody><tr><td height="100%" valign="center" width="100%" align="center">Sixen<br>Sep 04, 2010<br>06:34 PM</td></tr></tbody></table></td><td><div style="border: 1px #555 solid; padding: 2px; padding-left: 5px;"><br>Added Heinermann's notes. Just need SC/BW Beta.<br>
+<br>
+Should we include WoW Keys as well, since we're keeping track of SC2 Keys?<br><br></div></td></tr></tbody></table><div id="author" nowrap=""> </div><table border="0" cellpadding="1" cellspacing="0" width="100%"><tbody><tr><td height="100%" width="20%" align="center"><table class="commentsidebar" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%"><tbody><tr><td height="100%" valign="center" width="100%" align="center">Heinermann<br>Sep 05, 2010<br>03:31 PM</td></tr></tbody></table></td><td><div style="border: 1px #555 solid; padding: 2px; padding-left: 5px;"><br>I think you should if the product, pubic, and private values are associated with it. AFAIK it is for any Blizzard key<br>
+<br>
+Confirmation: The Starcraft Anthology digital installer uses product value 0x17, there are no reservations.<br>
+Confirmation: The Diablo II digital installer uses product value 0x18, there are no reservations.<br>
+<br><br></div></td></tr></tbody></table><div id="author" nowrap=""> </div><table border="0" cellpadding="1" cellspacing="0" width="100%"><tbody><tr><td height="100%" width="20%" align="center"><table class="commentsidebar" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%"><tbody><tr><td height="100%" valign="center" width="100%" align="center">Sixen<br>Sep 18, 2010<br>08:08 PM</td></tr></tbody></table></td><td><div style="border: 1px #555 solid; padding: 2px; padding-left: 5px;"><br>With that in mind then.. We need the following:<br>
+* SC Beta<br>
+* BW Beta<br>
+* WoW Alpha/Beta/Retail/Guest<br>
+* WoW TBC Alpha/Beta/Guest<br>
+* WoW WotLK Alpha/Beta/Guest<br>
+* WoW Cata Alpha/Beta/Retail/Guest<br><br></div></td></tr></tbody></table><div id="author" nowrap=""> </div><table border="0" cellpadding="1" cellspacing="0" width="100%"><tbody><tr><td height="100%" width="20%" align="center"><table class="commentsidebar" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%"><tbody><tr><td height="100%" valign="center" width="100%" align="center">RealityRipple<br>Sep 13, 2010<br>01:44 PM</td></tr></tbody></table></td><td><div style="border: 1px #555 solid; padding: 2px; padding-left: 5px;"><br>Um... pretty sure the WoW guest passes are 0x1B, but I'm not sure which copy of WoW.<br><br></div></td></tr></tbody></table><div id="author" nowrap=""> </div><table border="0" cellpadding="1" cellspacing="0" width="100%"><tbody><tr><td height="100%" width="20%" align="center"><table class="commentsidebar" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%"><tbody><tr><td height="100%" valign="center" width="100%" align="center">RealityRipple<br>Sep 18, 2010<br>05:24 AM</td></tr></tbody></table></td><td><div style="border: 1px #555 solid; padding: 2px; padding-left: 5px;"><br>WoW TBC Retail: 0x15<br>
+WoW WotLK Retail: 0x1A<br><br></div></td></tr></tbody></table><div id="author" nowrap=""> </div><table border="0" cellpadding="1" cellspacing="0" width="100%"><tbody><tr><td height="100%" width="20%" align="center"><table class="commentsidebar" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%"><tbody><tr><td height="100%" valign="center" width="100%" align="center">Sixen<br>Sep 18, 2010<br>08:07 PM</td></tr></tbody></table></td><td><div style="border: 1px #555 solid; padding: 2px; padding-left: 5px;"><br>Added.<br><br></div></td></tr></tbody></table><div id="author" nowrap=""> </div><table border="0" cellpadding="1" cellspacing="0" width="100%"><tbody><tr><td height="100%" width="20%" align="center"><table class="commentsidebar" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%"><tbody><tr><td height="100%" valign="center" width="100%" align="center">RealityRipple<br>Mar 04, 2011<br>09:53 PM</td></tr></tbody></table></td><td><div style="border: 1px #555 solid; padding: 2px; padding-left: 5px;"><br>WoW (14-day Trial): 0x16<br><br></div></td></tr></tbody></table><div id="author" nowrap=""> </div><table border="0" cellpadding="1" cellspacing="0" width="100%"><tbody><tr><td height="100%" width="20%" align="center"><table class="commentsidebar" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%"><tbody><tr><td height="100%" valign="center" width="100%" align="center">Jailout2000<br>Mar 13, 2011<br>07:20 PM</td></tr></tbody></table></td><td><div style="border: 1px #555 solid; padding: 2px; padding-left: 5px;"><br>Added.<br><br></div></td></tr></tbody></table><div id="author" nowrap=""> </div><table border="0" cellpadding="1" cellspacing="0" width="100%"><tbody><tr><td height="100%" width="20%" align="center"><table class="commentsidebar" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%"><tbody><tr><td height="100%" valign="center" width="100%" align="center">Jailout2000<br>Jun 15, 2011<br>10:21 PM</td></tr></tbody></table></td><td><div style="border: 1px #555 solid; padding: 2px; padding-left: 5px;"><br>Added a couple functions for encoding/decoding 13-digit keys in REALbasic. May be helpful, or maybe not...<br><br></div></td></tr></tbody></table></div></div></div></td>
+<td id="frills" valign="top" width="20%">
+	
+	<!--<div id="container">
+	<div id="main2">
+	<div id="author">BNLS Redirector Status</div>
+		<div align=center>
+		<table cellspacing=2 cellpadding=2 border=0>
+				</table>
+		</div>
+		<br>
+	</div></div>-->
+	
+		
+	<div id="container">
+	<div id="main2">
+	<div id="author">BNLS Server Status</div>
+		<div align="center">
+		<table border="0" cellpadding="2" cellspacing="2">
+		<tbody><tr><td><font size="2">vps.clan-warp.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">bnls.tk: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/disconnected.png"><br></td></tr><tr><td><font size="2">vectorjbls.no-ip.org: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">jbls.bhfiles.com: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">bnls.war-lords.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">ribose.no-ip.org: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/disconnected.png"><br></td></tr><tr><td><font size="2">pyro.no-ip.biz: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">bnls.anubisdev.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">bnls.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">knight.mattkv.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">wjlafrance.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">bnls.mattkv.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">phix.no-ip.org: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr>		</tbody></table>
+		</div>
+		<br>
+		<center><font size="1"><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"> = Online &nbsp; &nbsp; &nbsp; <img src="Product%20Keys%20and%20Hashing_archivos/disconnected.png"> = Offline<br><br></font></center>
+	</div></div>
+	
+	<div id="container">
+	<div id="main2">
+	<div id="author">Battle.net Server Status</div>
+		<div align="center">
+		<h2>Battle.net v1</h2><table border="0" cellpadding="2" cellspacing="2"><tbody><tr><td><font size="2">uswest.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">exodus.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">useast.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">asia.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">europe.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr></tbody></table><h2>Battle.net v1 Beta</h2><table border="0" cellpadding="2" cellspacing="2"><tbody><tr><td><font size="2">beta.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">classicbeta.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr></tbody></table><h2>Battle.net v1 Demo</h2><table border="0" cellpadding="2" cellspacing="2"><tbody><tr><td><font size="2">demo.war3.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr></tbody></table><h2>Battle.net v2</h2><table border="0" cellpadding="2" cellspacing="2"><tbody><tr><td><font size="2">us.logon.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">eu.logon.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">kr.logon.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">cn.logon.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">public-test.logon.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">us.patch.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">eu.patch.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">kr.patch.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">cn.patch.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">public-test.patch.battle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr></tbody></table><h2>ColdNet</h2><table border="0" cellpadding="2" cellspacing="2"><tbody><tr><td><font size="2">vps.clan-warp.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">uswest.bnet.cc: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">useast.bnet.cc: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">bnls.tk: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/disconnected.png"><br></td></tr></tbody></table><h2>emNet</h2><table border="0" cellpadding="2" cellspacing="2"><tbody><tr><td><font size="2">74.117.56.213: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/disconnected.png"><br></td></tr><tr><td><font size="2">74.117.56.214: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/disconnected.png"><br></td></tr><tr><td><font size="2">208.91.129.169: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/disconnected.png"><br></td></tr></tbody></table><h2>PvPGN</h2><table border="0" cellpadding="2" cellspacing="2"><tbody><tr><td><font size="2">server.eurobattle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">pvpgn.boredaussie.com: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">rubattle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">sc.theabyss.ru: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">bnetd.fishbattle.net: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr><tr><td><font size="2">vetsvr.no-ip.org: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr></tbody></table><h2>RBNETD</h2><table border="0" cellpadding="2" cellspacing="2"><tbody><tr><td><font size="2">svr1.no-ip.org: </font></td><td><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"><br></td></tr></tbody></table>		</div>
+		<br>
+		<center><font size="1"><img src="Product%20Keys%20and%20Hashing_archivos/connected.png"> = Online &nbsp; &nbsp; &nbsp; <img src="Product%20Keys%20and%20Hashing_archivos/disconnected.png"> = Offline<br><br></font></center>
+	</div></div>
+	
+	<div id="links">
+	<div id="container">
+	<div id="main2">
+	<div id="author">Links</div>
+		<center>
+		<a href="http://forum.valhallalegends.com/" target="_blank"><img src="Product%20Keys%20and%20Hashing_archivos/vl_linkto.gif" alt="Valhalla Legends" title="vL Forums"></a>
+		<a href="http://www.gosugamers.net/" target="_blank"><img src="Product%20Keys%20and%20Hashing_archivos/GG_linktous_91x32_1.gif" alt="Gosu Gamers"></a><br>
+		<a href="http://www.jailout2000.com/" target="_blank"><img src="Product%20Keys%20and%20Hashing_archivos/Jailout2000.jpg" alt="Jailout2000" title="Jailout2000's Website"></a>
+		<a href="http://www.darkblizz.org/" target="_blank"><img src="Product%20Keys%20and%20Hashing_archivos/DarkBlizzbnetweb.gif" alt="DarkBlizz" title="DarkBlizz - Making Battle.net Magic"></a><br>
+		</center>
+	</div></div></div>
+	
+	<div id="rssfeeds">
+	<div id="container">
+	<div id="main2">
+	<div id="author">RSS Feeds</div>
+		<br>
+		<a href="http://www.bnetdocs.org/newsrss.php"><img src="Product%20Keys%20and%20Hashing_archivos/rss.gif"> &nbsp; BNETDocs News</a><br>
+				<br>
+	</div></div></div>
+	
+	
+		<div id="container">
+	<div id="main2">
+	<div id="author">Advertisements</div>
+		<div align="center">
+		<a href="http://www.bnetdocs.org/">Sponsor Us; Advertise here!</a><br><br>
+		<script type="text/javascript"><!--
+		google_ad_client = "pub-5293484515355302";
+		google_ad_width = 160;
+		google_ad_height = 600;
+		google_ad_format = "160x600_as";
+		google_ad_type = "text_image";
+		//2007-06-19: BNETDocs
+		google_ad_channel = "2273844208";
+		//-->
+		</script>
+		<script type="text/javascript" src="Product%20Keys%20and%20Hashing_archivos/show_ads.js">
+		</script><ins style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="600" scrolling="no" width="160"></iframe></ins></ins>
+	</div>
+	</div>
+	</div>
+		</td>
+</tr></tbody></table>
+<br><br>
+<div id="copyrights">
+<div id="author">Copyrights</div>
+<br>Site scripts and design copyrights reserved to <a href="http://www.doncullen.net/">Don Cullen</a>.<br>
+Contents copyrighted to Blizzard and their parent corporation, Vivendi.<br>
+Main credits for contents goes to Arta. <a href="http://www.bnetdocs.org/?op=credits">View the rest of credits.</a><br>
+Demented Minds copyrights reserved to <a href="http://www.doncullen.net/">Don Cullen</a> 2003-present.<br>
+Copyright infringements will be prosecuted to the fullest extent allowable by law.
+<br>
+<a href="http://www.bnetdocs.org/?op=legalism"><font size="1">Please view our legal disclaimer and terms of service.</font></a><br><br>
+</div>
+</div>
+<script src="Product%20Keys%20and%20Hashing_archivos/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2637626-2";
+urchinTracker();
+</script>
+
+</body></html>
